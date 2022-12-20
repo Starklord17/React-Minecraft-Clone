@@ -19,7 +19,7 @@ const groundTexture = new TextureLoader().load(grassImg)
 groundTexture.wrapS = RepeatWrapping
 groundTexture.wrapT = RepeatWrapping
 
-groundTexture.magFilter = NearestFilter
+groundTexture.magFilter = NearestFilter // Agranda la imagen y mantienen los px que están más cerca.
 grassTexture.magFilter = NearestFilter
 dirtTexture.magFilter = NearestFilter
 logTexture.magFilter = NearestFilter
