@@ -3,12 +3,9 @@ import { Sky } from '@react-three/drei'
 
 function App () {
   return (
-    <div>
-      <h1>Maxcraft</h1>
         <Canvas>
-          <Sky />
+          <Sky sunPosition={[100, 100, 20]} />
         </Canvas>
-    </div>
   )
 }
 
