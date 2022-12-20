@@ -8,7 +8,7 @@ export const Player = () => {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
-    position: [0, 5, 0] // Posición inicial
+    position: [0, 1, 0] // Posición inicial
   }))
 
   const pos = useRef([0, 0, 0])
@@ -35,7 +35,8 @@ export const Player = () => {
         pos.current[2] // z
       )
     )
-
+    // Move the camera forward
+    // Pero esto tendría que ser con el teclado
     api.velocity.set(0, 0, -1)
   })
 
