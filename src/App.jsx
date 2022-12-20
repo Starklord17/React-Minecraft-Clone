@@ -1,6 +1,14 @@
+import { Canvas } from '@react-three/fiber'
+import { Sky } from '@react-three/drei'
+
 function App () {
   return (
-   <h1>Maxcraft</h1>
+    <div>
+      <h1>Maxcraft</h1>
+        <Canvas>
+          <Sky />
+        </Canvas>
+    </div>
   )
 }
 
