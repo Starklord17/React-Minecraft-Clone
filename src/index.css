@@ -32,4 +32,32 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: .5;
+    z-index: 0;
 }
+
+.texture-selector {
+    position: absolute;
+    display: flex;
+    bottom: 32px;
+    background: #aaa;
+    padding: 8px;
+    border: 3px solid #000;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 8px;
+  }
+  
+  .texture-selector.hidden {
+    display: none;
+  }
+  
+  .texture-selector img {
+    width: 50px;
+    z-index: 100;
+    image-rendering: pixelated;
+    border: 3px solid #000;
+  }
+  
+  .texture-selector img.selected {
+    border-color: red;
+  }
