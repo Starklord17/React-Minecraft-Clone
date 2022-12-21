@@ -1,6 +1,6 @@
 import { useBox } from '@react-three/cannon'
 
-export const Cubes = ({ id, pos, texture }) => {
+export const Cube = ({ id, pos, texture }) => {
   const [ref] = useBox(() => ({
     type: 'Static',
     pos

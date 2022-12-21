@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import create from 'zustand/react'
+import create from 'zustand'
 
 export const useStore = create(set => ({
   texture: 'dirt',
