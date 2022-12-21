@@ -1,15 +1,18 @@
 import { useBox } from '@react-three/cannon'
+import * as textures from '../images/textures.js'
 
-export const Cube = ({ id, pos, texture }) => {
+export const Cube = ({ position, texture }) => {
   const [ref] = useBox(() => ({
     type: 'Static',
-    pos
+    position
   }))
+
+  const activeTexture = textures[texture + 'Texture']
 
   return (
     <mesh ref={ref}>
       <boxBufferGeometry attach='geometry' />
-      <meshStandardMaterial color='white' attach='material' />
+      <meshStandardMaterial map={activeTexture} attach='material' />
     </mesh>
   )
 }
