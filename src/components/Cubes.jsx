@@ -1,6 +1,7 @@
 import { useStore } from 'zustand'
+import { Cube } from './Cube.jsx'
 
-export const Cube = () => {
+export const Cubes = () => {
   const [cubes] = useStore(state => [state.cubes])
 
   return cubes.map(({ id, pos, texture }) => {
