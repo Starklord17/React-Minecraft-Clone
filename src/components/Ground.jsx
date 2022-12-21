@@ -1,10 +1,10 @@
 import { usePlane } from '@react-three/cannon'
-import { useStore } from '@react-three/fiber'
+import { useStore } from '../hooks/useStore'
 import { groundTexture } from '../images/textures'
 
 export function Ground () {
   const [ref] = usePlane(() => ({
-    rotation: [-Math.PI / 2, 0, 0], // x, y, z
+    rotation: [-Math.PI / 2, 0, 0],
     position: [0, -0.5, 0] // x, y, z
   }))
 
@@ -16,6 +16,7 @@ export function Ground () {
     event.stopPropagation()
     // console.log(event.point);
     const [x, y, z] = Object.values(event.point).map(n => Math.ceil(n))
+
     addCube(x, y, z)
   }
 

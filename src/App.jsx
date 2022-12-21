@@ -1,10 +1,10 @@
 import { Canvas } from '@react-three/fiber'
 import { Sky } from '@react-three/drei'
 import { Physics } from '@react-three/cannon'
-import { Ground } from './components/Ground'
-import { FPV as Fpv } from './components/FPV'
-import { Player } from './components/Player'
-import { Cubes } from './components/Cubes'
+import { Ground } from './components/Ground.jsx'
+import { FPV as Fpv } from './components/FPV.jsx'
+import { Player } from './components/Player.jsx'
+import { Cubes } from './components/Cubes.jsx'
 
 function App () {
   return (
@@ -13,6 +13,7 @@ function App () {
         <Sky sunPosition={[100, 100, 20]} />
         <ambientLight intensity={0.5} />
         <Fpv />
+
         <Physics>
           <Cubes />
           <Player />
