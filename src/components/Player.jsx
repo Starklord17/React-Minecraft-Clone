@@ -4,11 +4,11 @@ import { useEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 import { useKeyboard } from '../hooks/useKeyboard'
 
-const CHARACTER_SPEED = 2
-const CHARACTER_JUMP_FORCE = 10
+const CHARACTER_SPEED = 5
+const CHARACTER_JUMP_FORCE = 4
 
 export const Player = () => {
-  const { moveBackward, moveForward, moveLeft, moveRight, jump} = useKeyboard()
+  const { moveBackward, moveForward, moveLeft, moveRight, jump } = useKeyboard()
 
   const { camera } = useThree()
   const [ref, api] = useSphere(() => ({
@@ -60,13 +60,21 @@ export const Player = () => {
       .subVectors(frontVector, sideVector)
       .normalize()
       .multiplyScalar(CHARACTER_SPEED) // walk: 2, run : 5
-      .applyEuler(camera.rotation)
+      .applyEuler(camera.rotation) // Camera rotation ref
 
     api.velocity.set(
       direction.x,
       vel.current[1], // ??? saltar...
       direction.z
     )
+
+    if (jump && Math.abs(vel.current[1]) < 0.05) {
+      api.velocity.set(
+        vel.current[0],
+        CHARACTER_JUMP_FORCE,
+        vel.current[2]
+      )
+    }
 
     // Move the camera forward
     // Pero esto tendría que ser con el teclado
