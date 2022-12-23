@@ -7,6 +7,8 @@ export const Cube = ({ id, position, texture }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [removeCube] = useStore(state => [state.removeCube])
 
+  // const [addCube] = useStore(state => [state.addCube])
+
   const [ref] = useBox(() => ({
     type: 'Static',
     position
