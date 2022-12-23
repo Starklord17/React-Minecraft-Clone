@@ -1,7 +1,7 @@
-import { nanoid } from 'nanoid'
 import create from 'zustand'
+import { nanoid } from 'nanoid'
 
-export const useStore = create(set => ({
+export const useStore = create((set) => ({
   texture: 'dirt',
   cubes: [{
     id: nanoid(),
@@ -9,15 +9,15 @@ export const useStore = create(set => ({
     texture: 'dirt'
   }, {
     id: nanoid(),
-    pos: [1, 5, 1],
+    pos: [1, 4, 1],
     texture: 'log'
   }],
   addCube: (x, y, z) => {
-    set(state => ({
-      cubes: [...state.cubes, {
+    set((prev) => ({
+      cubes: [...prev.cubes, {
         id: nanoid(),
-        texture: state.texture,
-        pos: [x, y, z]
+        pos: [x, y, z],
+        texture: prev.texture
       }]
     }))
   },

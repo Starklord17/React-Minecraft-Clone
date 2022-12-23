@@ -10,6 +10,7 @@ export function Ground () {
 
   const [addCube] = useStore(state => [state.addCube])
 
+  //  Size
   groundTexture.repeat.set(100, 100)
 
   const handleClickGround = event => {

@@ -12,6 +12,7 @@ export const Cube = ({ id, position, texture }) => {
     position
   }))
 
+  // +'Texture' to use the different textures
   const activeTexture = textures[texture + 'Texture']
 
   return (

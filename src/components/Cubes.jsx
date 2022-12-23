@@ -1,3 +1,5 @@
+// Component that render all the cubes
+
 import { useStore } from '../hooks/useStore'
 import { Cube } from './Cube.jsx'
 

@@ -19,7 +19,7 @@ groundTexture.wrapS = RepeatWrapping
 groundTexture.wrapT = RepeatWrapping
 // groundTexture.repeat.set(100,100)
 
-groundTexture.magFilter = NearestFilter // Agranda la imagen y mantienen los px que están más cerca.
+groundTexture.magFilter = NearestFilter // Enlarge the image and keep the px that are closer.
 grassTexture.magFilter = NearestFilter
 dirtTexture.magFilter = NearestFilter
 logTexture.magFilter = NearestFilter
