@@ -46,6 +46,11 @@ export const Player = () => {
 
     const direction = new Vector3()
 
+    /* La variable frontVector es una instancia de la clase Vector3, que representa un vector tridimensional en un sistema de coordenadas.
+
+    La expresión new Vector3(0, 0, (moveBackward ? 1 : 0) - (moveForward ? 1 : 0)) crea una nueva instancia de Vector3 con los componentes x, y, z inicializados a 0, 0 y (moveBackward ? 1 :   0) - (moveForward ? 1 : 0), respectivamente.
+
+    El tercer componente del vector se calcula usando operadores ternarios. Si moveBackward es verdadero, el componente z se inicializa a 1. Si moveForward es verdadero, el componente z se  inicializa a -1. Si ninguno de estos es verdadero, el componente z se inicializa a 0. */
     const frontVector = new Vector3(
       0,
       0,

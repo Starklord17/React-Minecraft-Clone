@@ -30,7 +30,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Pointer in the middle */
     opacity: .5;
     z-index: 0;
 }
