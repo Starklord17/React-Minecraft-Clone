@@ -8,16 +8,18 @@ export function Ground () {
     position: [0, -0.5, 0] // x, y, z
   }))
 
+  // Adding cubes
   const [addCube] = useStore(state => [state.addCube])
 
   //  Size
   groundTexture.repeat.set(100, 100)
 
+  // stopPropagation so that the click cannot be passed the view of the ground
   const handleClickGround = event => {
     event.stopPropagation()
     // console.log(event.point);
     const [x, y, z] = Object.values(event.point).map(n => Math.ceil(n))
-
+    // Math.floor || Math.ceil
     addCube(x, y, z)
   }
 
