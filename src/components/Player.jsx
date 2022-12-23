@@ -17,6 +17,7 @@ export const Player = () => {
     position: [0, 1, 0] // Posición inicial
   }))
 
+  // Posición del PJ
   const pos = useRef([0, 0, 0])
   useEffect(() => {
     api.position.subscribe(p => {
@@ -24,14 +25,15 @@ export const Player = () => {
     })
   }, [api.position])
 
-  // Velocidad del pj
+  // Velocidad del PJ
   const vel = useRef([0, 0, 0])
   useEffect(() => {
-    api.velocity.subscribe(p => {
-      vel.current = p
+    api.velocity.subscribe(v => {
+      vel.current = v
     })
   }, [api.velocitiy])
 
+  // Atach the camera to the position of the player
   // Cada vez que hace un Frame va hacia adelante. La posición de la camara copia la posición del pj.
   useFrame(() => {
     camera.position.copy(

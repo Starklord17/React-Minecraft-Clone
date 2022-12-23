@@ -13,11 +13,11 @@ const dirtTexture = new TextureLoader().load(dirtImg)
 const logTexture = new TextureLoader().load(logImg)
 const glassTexture = new TextureLoader().load(glassImg)
 const woodTexture = new TextureLoader().load(woodImg)
-
 const groundTexture = new TextureLoader().load(grassImg)
 
 groundTexture.wrapS = RepeatWrapping
 groundTexture.wrapT = RepeatWrapping
+// groundTexture.repeat.set(100,100)
 
 groundTexture.magFilter = NearestFilter // Agranda la imagen y mantienen los px que están más cerca.
 grassTexture.magFilter = NearestFilter
