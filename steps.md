@@ -15,4 +15,4 @@
 - [x] Cube type selector
 - [x] Save world in localstorage
 - [x] Hover state on cubes
-- [] Build a house
+- [x] Build a house

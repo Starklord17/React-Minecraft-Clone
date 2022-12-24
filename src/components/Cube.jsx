@@ -62,13 +62,13 @@ export const Cube = ({ id, position, texture }) => {
 			}}
 			ref={ref}
 		>
-      <boxBufferGeometry attach='geometry' />
-      <meshStandardMaterial
-        color={isHovered ? 'grey' : 'white'}
-        transparent
-        map={activeTexture}
-        attach='material'
-      />
-    </mesh>
+			<boxBufferGeometry attach="geometry" />
+			<meshStandardMaterial
+				color={isHovered ? 'grey' : 'white'}
+				map={activeTexture}
+				transparent={true}
+				opacity={texture === 'glass' ? 0.6 : 1}
+				attach="material" />
+		</mesh>
   )
 }
