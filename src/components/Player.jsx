@@ -14,10 +14,10 @@ export const Player = () => {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
-    position: [0, 1, 0] // Posición inicial
+    position: [0, 1, 0] // Initial position
   }))
 
-  // Posición del PJ
+  // PJ position
   const pos = useRef([0, 0, 0])
   useEffect(() => {
     api.position.subscribe(p => {
@@ -25,7 +25,7 @@ export const Player = () => {
     })
   }, [api.position])
 
-  // Velocidad del PJ
+  // PJ velocity
   const vel = useRef([0, 0, 0])
   useEffect(() => {
     api.velocity.subscribe(v => {
@@ -34,7 +34,6 @@ export const Player = () => {
   }, [api.velocitiy])
 
   // Atach the camera to the position of the player
-  // Cada vez que hace un Frame va hacia adelante. La posición de la camara copia la posición del pj.
   useFrame(() => {
     camera.position.copy(
       new Vector3(
@@ -71,7 +70,7 @@ export const Player = () => {
 
     api.velocity.set(
       direction.x,
-      vel.current[1], // ??? saltar...
+      vel.current[1],
       direction.z
     )
 
@@ -82,10 +81,6 @@ export const Player = () => {
         vel.current[2]
       )
     }
-
-    // Move the camera forward
-    // Pero esto tendría que ser con el teclado
-    // api.velocity.set(0, 0, -1)
   })
 
   return (
