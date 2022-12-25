@@ -5,7 +5,7 @@ import { Vector3 } from 'three'
 import { useKeyboard } from '../hooks/useKeyboard'
 
 const CHARACTER_SPEED = 5
-const CHARACTER_JUMP_FORCE = 4
+const CHARACTER_JUMP_FORCE = 5
 
 export const Player = () => {
   const { moveBackward, moveForward, moveLeft, moveRight, jump } = useKeyboard()
@@ -14,10 +14,10 @@ export const Player = () => {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     type: 'Dynamic',
-    position: [0, 1, 0] // Posición inicial
+    position: [0, 1, 0] // Initial position
   }))
 
-  // Posición del PJ
+  // PJ position
   const pos = useRef([0, 0, 0])
   useEffect(() => {
     api.position.subscribe(p => {
@@ -25,7 +25,7 @@ export const Player = () => {
     })
   }, [api.position])
 
-  // Velocidad del PJ
+  // PJ velocity
   const vel = useRef([0, 0, 0])
   useEffect(() => {
     api.velocity.subscribe(v => {
@@ -34,7 +34,6 @@ export const Player = () => {
   }, [api.velocitiy])
 
   // Atach the camera to the position of the player
-  // Cada vez que hace un Frame va hacia adelante. La posición de la camara copia la posición del pj.
   useFrame(() => {
     camera.position.copy(
       new Vector3(
@@ -46,6 +45,11 @@ export const Player = () => {
 
     const direction = new Vector3()
 
+    /* La variable frontVector es una instancia de la clase Vector3, que representa un vector tridimensional en un sistema de coordenadas.
+
+    La expresión new Vector3(0, 0, (moveBackward ? 1 : 0) - (moveForward ? 1 : 0)) crea una nueva instancia de Vector3 con los componentes x, y, z inicializados a 0, 0 y (moveBackward ? 1 :   0) - (moveForward ? 1 : 0), respectivamente.
+
+    El tercer componente del vector se calcula usando operadores ternarios. Si moveBackward es verdadero, el componente z se inicializa a 1. Si moveForward es verdadero, el componente z se  inicializa a -1. Si ninguno de estos es verdadero, el componente z se inicializa a 0. */
     const frontVector = new Vector3(
       0,
       0,
@@ -66,7 +70,7 @@ export const Player = () => {
 
     api.velocity.set(
       direction.x,
-      vel.current[1], // ??? saltar...
+      vel.current[1],
       direction.z
     )
 
@@ -77,10 +81,6 @@ export const Player = () => {
         vel.current[2]
       )
     }
-
-    // Move the camera forward
-    // Pero esto tendría que ser con el teclado
-    // api.velocity.set(0, 0, -1)
   })
 
   return (
