@@ -6,7 +6,7 @@ import { FPV as Fpv } from './components/FPV.jsx'
 import { Player } from './components/Player.jsx'
 import { Cubes } from './components/Cubes.jsx'
 import { TextureSelector } from './components/TextureSelect.jsx'
-import { Menu } from './components/Menu';
+import { Menu } from './components/Menu'
 
 function App () {
   return (
