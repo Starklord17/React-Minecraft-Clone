@@ -11,7 +11,8 @@
   - [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/)
 - [ViteJS](https://vitejs.dev)
 
-
+## Demo:
+https://maxminecraft-clone.netlify.app/
 
 ## How to play?
 
