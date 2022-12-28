@@ -12,7 +12,7 @@
 - [ViteJS](https://vitejs.dev)
 
 ## Demo:
-https://maxminecraft-clone.netlify.app/
+https://react-minecraft-clone.vercel.app/
 
 ## How to play?
 
