@@ -66,8 +66,22 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
+
   }
 
-  .menu:hover {
-    box-shadow: 0 4px 6px rgba(0, 0 , 0, 0.1)
+  .btn {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1.2em;
+    font-family: inherit;
+    background-color: #01060813;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: rgb(255, 255, 255);
+  }
+
+  .btn:hover {
+    box-shadow: 0 4px 6px rgba(0, 0 , 0, 0.1);
+    border-color: #646cff;
   }

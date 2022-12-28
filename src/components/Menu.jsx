@@ -8,8 +8,8 @@ export const Menu = () => {
 
   return (
     <div className="menu absolute">
-      <button onClick={() => saveWorld()}>Save</button>
-      <button onClick={() => resetWorld()}>Reset</button>
+      <button className="btn" onClick={() => saveWorld()}>Save</button>
+      <button className="btn" onClick={() => resetWorld()}>Reset</button>
     </div>
   );
 };
