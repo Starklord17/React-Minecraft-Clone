@@ -6,9 +6,9 @@ const ACTIONS_KEYBOARD_MAP = {
   KeyA: 'moveLeft',
   KeyD: 'moveRight',
   Space: 'jump',
-  Digit1: 'grass',
+  Digit1: 'dirt',
   Digit2: 'glass',
-  Digit3: 'dirt',
+  Digit3: 'grass',
   Digit4: 'log',
   Digit5: 'wood'
 }
